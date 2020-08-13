@@ -1,0 +1,15 @@
+
+ .footer{
+    text-align: center;
+    color: var(--color-title);
+ 
+    background-color: var(--color-primary);
+    flex-shrink: 1;
+}
+.footer h3{
+    margin: 0;
+    text-align: center;
+    color: var(--color-title);
+    font-size: 1rem;
+    margin: 1rem;
+} 
