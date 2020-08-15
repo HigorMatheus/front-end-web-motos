@@ -1,22 +1,3 @@
- .photo{
-     display: flex;
-    margin: 0;
-    margin-bottom: 0px;
-    padding: 0;
-    flex-wrap: wrap;
-    width: 150px;
-}
-
-.photo img{
-    width: 100%;
-    /* background-color: steelblue; */
-    /* margin: -.8rem; */
-    padding: 0;
-    flex-wrap: wrap;
-    border: 1px solid ;
-    /* border-color: #000000; */
-    border-color: #000000;
-} 
 
 .bg-modal{
     width: 100%;
