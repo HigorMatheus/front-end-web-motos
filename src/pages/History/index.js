@@ -15,7 +15,7 @@ function History() {
             <p>A ideia principal é receber fotos, videos e ter curtidas e comentarios, ou seja uma rede social voltado a motos, colocando a costumização, grau, motos originais vintage</p>
             
         </section>
-        <Footer/>
+
       </div>
   );
 }

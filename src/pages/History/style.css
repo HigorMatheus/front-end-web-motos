@@ -2,14 +2,17 @@
     /* display: inline-block; */
     height: 100%;
     width: 100%;
-    background-color: var(--color-beckground-with);
+    background-color: var(--color-beckground-history);
 }
 
  #contener-history{
     width: 90%;
+    /* height: 10%; */
     margin: 0 auto;
     /* display: flex; */
     text-align: justify;
+    border: 2px solid var(--color-beckground-with);
+    background: var(--color-beckground-with);
 }
  #contener-history h1{
     /* width: 90%; */

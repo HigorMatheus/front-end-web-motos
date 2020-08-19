@@ -3,41 +3,46 @@
     width: 100%;
     height: 100%;
     margin: 0;
-    /* top: -100%; */
     align-items: center;
     background: var(--color-background-modal);
-    position: fixed;
+    position: absolute;
     z-index: 2;
     top: 0;
     left: 0;
-    text-align: center;
-    align-items: center;
+    /* text-align: center; */
+    /* align-items: center; */
     transition: 350ms;
 }
 
 .modal{
-    z-index: 1;
-    padding: 20px;
+    display: inline-block;
+    /* z-index: 1; */
+    padding: 1rem;
     border: 1px solid #000;
-    width: 60%;
+    width: 25rem;
     height: 50%;
-    /* top:0; */
-    border-radius: 2rem;
-    /* margin-block: auto; */
-    background: var(--color-text) ;
-    margin: 80px auto 0 auto ;
+    /* border-radius: 2rem; */
+    background: #fff ;
+    margin: 2rem auto 0 auto ;
     transition: 350ms;
 }
 
 .modal span{
     float: right;
-    font-size: 1.5rem;
+    font-size: 2rem;
     margin: 0.2rem;
     cursor: pointer;
+    color: var(--color-span-modal);
     transition: 350ms;
 }
-.modal span :hover{
-    /* float: right; */
-    color: red;
+.modal span:hover{
+    color: var(--color-hover-span-modal);
+    /* font-size: 2.3rem; */
     transition: 350ms;
+}
+
+.modal img{
+    /* margin-left: 0%; */
+    width: 20rem;
+    /* height: 85%; */
 }
