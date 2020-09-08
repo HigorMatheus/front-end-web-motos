@@ -5,11 +5,8 @@ import Header from '../../components/header/index'
 import Footer from '../../components/footer';
 import { Form } from '@unform/web'
 import Input from '../../components/Form/input'
-// import axios from 'axios'
-// import DropzinePreview from '../../components/Dropzone'
-import ImageInput from '../../components/Form/imputFile';
 import api from '../../services/api';
-const CriatePost = () => {
+const SignUp = () => {
     const history = useHistory()
     async function handleSubmit(data){
         // console.log(data.avatar);
@@ -23,16 +20,17 @@ const CriatePost = () => {
         // const response = await api.get(`/photos/${id}`)
        const photo = await api.post('/photos', dados)
 
-       if(photo){
-       console.log(photo);
-       return history.push("/photos")
-       }
+    //    if(photo){
+    //    console.log(photo);
+    //    return history.push("/photos")
+    //    }
     }
   return (
-      <div id="page-history">
+      <>
+      <div id="page-SignUp">
         <Header/>
-            <section id="contener-create-post" className=" container contener-create-post">
-                <div className="create-post">
+            <section id="" className=" container ">
+                <div className="create">
                     <Form onSubmit={handleSubmit} action="" method="">
                     <fieldset id="user" className="fild-create">
                             <legend> seus dados </legend>
@@ -47,22 +45,7 @@ const CriatePost = () => {
                                 </div>
                             </div>
                         </fieldset> 
-                            
-                        <fieldset id="fild-create-post" className="fild-create-post">
-                            <legend>ADD / Photos</legend> 
-                            <div className="postagem">
-                                <div className="camp-form">
-                                    <label for="avatar">photo <span>link (http:// )</span> </label>
-                                    {/* <Input className="input-block " name="avatar" type="link" required/> */}
-                                 {/* <DropzinePreview></DropzinePreview> */}
-                                 <ImageInput className="input-block " name="avatar"></ImageInput>
-                                </div>
-                                <div className="camp-form">
-                                    <label for="description">descricao</label>
-                                    <Input classNameName="textarea-block " name="description" />
-                                </div>
-                            </div>
-                        </fieldset>
+
                         <button type="submit" >enviar</button>
                     </Form>
                     {/* <form action="savephotos" method="POST"> */}
@@ -70,8 +53,10 @@ const CriatePost = () => {
                     {/* </form> */}
                 </div>
             </section>
-        <Footer/>
+            {/* <Footer/> */}
       </div>
+      
+      </>
   );
 }
-export default CriatePost;
+export default SignUp;

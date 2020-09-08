@@ -1,7 +1,7 @@
 import React from 'react';
 import './style.css';
 import Header from '../../components/header/index'
-import Footer from '../../components/footer';
+// import Footer from '../../components/footer';
 // import '../../assets/css/partials/History.css'
 // require('../../assets/css')
 

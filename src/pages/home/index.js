@@ -1,9 +1,14 @@
 import React from 'react';
 import './style.css';
+import { Link, useHistory } from 'react-router-dom';
+import { isAuthenticated, logout } from '../../services/auth';
 // import '../../assets/css/partials/home.css'
 // require('../../assets/css')
 
+// import logout from '../../services/auth'
+
 function Home() {
+    const history = useHistory()
   return (
     <div  id="page-home">
         <section id="content" className="container">
@@ -15,20 +20,19 @@ function Home() {
         
             <img className="img-main" src={require('../../assets/img/grau.png')} alt=""/>
             <div className="menu">
-                    <a className="button" href="./historia">Historia</a>
+                    <Link className="button" to="./historia">Historia</Link>
             
-                    <a className="button" href="./photos">ver Photos</a>
-            
-                    <a className="button" href="./createPost"> Add Photos</a>
+                    <Link className="button" to="./photos">ver Photos</Link>
+                    {isAuthenticated()? (
+                        // <p>sair</p>
+                        <button className="button" onClick={()=>{logout(null);return history.push('/')} }>sair</button>
+                    ): <Link className="button" to="./login"> login</Link>}
             </div>
             
             <div className="sobre">
                 <p>estamos com 200 fotos compartilhadas</p>
             </div>
         </section>
-        <footer className="footer">
-                
-        </footer>
      </div>
   );
 }
