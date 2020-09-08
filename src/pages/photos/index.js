@@ -8,9 +8,9 @@ function Photos() {
     const [ photos, setPhotos] = useState([])
 
   useEffect(()=>{
-   api.get('/photos').then( response=>{
-      const {photos} =response.data;
-    //   console.log(photos);
+   api.get('/post').then( response=>{
+      const photos =response.data;
+      console.log(photos);
        setPhotos(photos)
    })
   },[])
@@ -30,7 +30,7 @@ function Photos() {
           return(
               <div className="photo">
                 <Link to={`/photos/${photo.id}`}>
-                    <img src={photo.avatar_url} alt="" srcset=""/>
+                    <img className="image" src={photo.imagem_url} alt="" srcset=""/>
                 </Link>
                 
               </div>

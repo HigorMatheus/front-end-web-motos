@@ -44,7 +44,7 @@
     height: auto;
 } */
 
-#page-home .menu a{
+#page-home  .menu a{
     display: block;
     text-decoration: none;
     color: var( --color-text);
@@ -53,6 +53,19 @@
     width: 13rem;
     height: 2.3rem;
     margin: 10px auto;
+    border-radius: 0.6rem;
+    text-align: center;
+    justify-content: center;
+}
+
+.button-nav{
+    display: block;
+    color: var( --color-text);
+    font-size: 2rem;
+    background-color:var(--color-button);
+    width: 13rem;
+    margin: 10px auto;
+    border:0 ;
     border-radius: 0.6rem;
     text-align: center;
     justify-content: center;
@@ -107,6 +120,9 @@
         grid-area: menu;
     }
     #page-home .menu a{
+        margin: 10px;
+    }
+    .button-nav{
         margin: 10px;
     }
     #page-home .sobre{

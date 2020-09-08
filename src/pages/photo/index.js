@@ -12,11 +12,11 @@ class Photo extends Component {
   async componentDidMount(){
       const {id} =this.props.match.params
       console.log(id);
-      const response = await api.get(`/photos/${id}`)
-      console.log(response.data.post);
+      const response = await api.get(`/post/${id}`)
+      console.log(response.data);
         // const photo= response.data
 
-      this.setState({photo:response.data.post})
+      this.setState({photo:response.data})
   }
  
 
@@ -30,7 +30,7 @@ class Photo extends Component {
             </header>
               <section id="contener-photo-datal">
                 <div className="photo-datal">
-                  <img className="img-datal" src={photo.avatar_url} alt={photo.id} srcset=""/>
+                  <img className="img-datal" src={photo.imagem_url} alt={photo.id} srcset=""/>
                 </div>
                 <div>
                   <p>{photo.description}</p>

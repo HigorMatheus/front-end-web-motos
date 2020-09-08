@@ -1,0 +1,10 @@
+.imputfileimage{
+    display: flex;
+    color: #fff;
+    background: #333333;
+    width: 100px;
+    /* height: 100px; */
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+}

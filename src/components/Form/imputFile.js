@@ -1,7 +1,7 @@
 import React, {  useRef, useEffect, useCallback, useState }  from 'react';
 
 import { useField } from '@unform/core';
-
+import'./style.css'
 const ImageInput= ({ name, ...rest }) => {
   const inputRef = useRef(null);
 
@@ -37,7 +37,9 @@ const ImageInput= ({ name, ...rest }) => {
 
   return (
     <>
-      { preview && <img src={preview} alt="Preview" width="100"  /> }
+     
+
+      { preview ? <img src={preview} alt="Preview" width="100" height="100"  /> :<img src='https://encrypted-tbn0.gstatic.com/images?q=tbn%3AANd9GcTDU0xJDBMpK0WS4nBRf3pp2LGIM0NSqzGIVg&usqp=CAU' alt="Preview" width="100" height="100"  />}
       <input
         type="file"
         ref={inputRef}

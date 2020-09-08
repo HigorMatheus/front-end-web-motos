@@ -25,8 +25,17 @@ function Home() {
                     <Link className="button" to="./photos">ver Photos</Link>
                     {isAuthenticated()? (
                         // <p>sair</p>
-                        <button className="button" onClick={()=>{logout(null);return history.push('/')} }>sair</button>
-                    ): <Link className="button" to="./login"> login</Link>}
+                        <>
+                        <Link className="button" to="./createPost">add Photos</Link>
+                        <button className="button-nav" onClick={()=>{logout(null);return history.push('/')} }>sair</button>
+                        </>
+                    ): (
+                        <>
+                            <Link className="button" to="./login"> login</Link>
+                            <Link className="button" to="./cadastro"> cadastre-se </Link>
+
+                        </>
+                    )}
             </div>
             
             <div className="sobre">

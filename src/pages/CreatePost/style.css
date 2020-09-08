@@ -6,7 +6,9 @@
 #contener-create-post .create-post{
     padding: 1rem;
 }
-
+.input-block{
+    width: 30rem;
+}
 .create-post .camp-form {
     border: 0;
 }
@@ -75,23 +77,3 @@
 
 
 
-
-.label-input{
-    padding: 2px;
-    width: 99%;
-    display: inline-block;
-    text-align: left;
-    font-size: 1.1rem;
-}
-.input-block,
-.textarea-block,
-.select-block {
-    width: 100%;
-    height: 100%;
-    margin: 0 ;
-    margin-top: 0.2rem;
-    border: none;
-    padding: 2px;
-    border-radius: 0.5rem;
-    resize: vertical;
-}

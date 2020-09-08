@@ -6,24 +6,23 @@ import Footer from '../../components/footer';
 import { Form } from '@unform/web'
 import Input from '../../components/Form/input'
 import api from '../../services/api';
+import { login } from '../../services/auth';
 const SignUp = () => {
     const history = useHistory()
     async function handleSubmit(data){
-        // console.log(data.avatar);
-        const dados = new FormData();
+        
+        if(data.password != data.confirma_password){
+            alert('as senha e comfirma senha  precisam ser iquais' )
+            return;
+        }
 
-        dados.append('name',data.name) 
-        dados.append('email',data.email) 
-        dados.append('avatar',data.avatar) 
-        dados.append('description',data.description) 
-        // console.log(data);
-        // const response = await api.get(`/photos/${id}`)
-       const photo = await api.post('/photos', dados)
-
-    //    if(photo){
-    //    console.log(photo);
-    //    return history.push("/photos")
-    //    }
+        const user = await api.post('/user', data)
+        if(user){
+            const token =user.data.token
+            login(token)
+        return history.push("/photos")
+        }
+    
     }
   return (
       <>
@@ -32,21 +31,27 @@ const SignUp = () => {
             <section id="" className=" container ">
                 <div className="create">
                     <Form onSubmit={handleSubmit} action="" method="">
-                    <fieldset id="user" className="fild-create">
-                            <legend> seus dados </legend>
-                            <div  >
+                    <fieldset id="form-cadastro" className="fild-create">
+                            <legend> cadastrese </legend>
+                            
                                 <div className="camp-form">
                                     <label className="label-input" for="name">name</label>
                                     <Input className="input-block" name="name" id="name" type="text" required/>
                                 </div>
                                 <div className="camp-form">
-                                        <label for="email">email</label> 
+                                        <label className="label-input"  for="email">email</label> 
                                         <Input className="input-block " id="email" name="email" type="text" required/>
                                 </div>
-                            </div>
+                                <div className="camp-form">
+                                        <label className="label-input"  for="password">senha</label> 
+                                        <Input className="input-block " id="password" name="password" type="password" required/>
+                                </div>
+                                <div className="camp-form">
+                                        <label className="label-input"  for="confirma_password">comfirma senha</label> 
+                                        <Input className="input-block " id="confirma_password" name="confirma_password" type="password" required/>
+                                </div>
+                             <button className="button-submit" type="submit" >enviar</button>
                         </fieldset> 
-
-                        <button type="submit" >enviar</button>
                     </Form>
                     {/* <form action="savephotos" method="POST"> */}
                         
